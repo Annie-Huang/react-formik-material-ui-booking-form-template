@@ -1,0 +1,8 @@
+Using Formik and Material-UI to Build Better Forms in React (Hooks) with Yup Validation
+(https://www.youtube.com/watch?v=MV9NC3FoCmM)
+
+https://github.com/simpletut/React-Formik-Material-UI-Booking-Form-Template
+https://github.com/Annie-Huang/react-formik-material-ui-booking-form-template
+----------------------------------------------------------------------------------------
+
+PS C:\react> npx create-react-app react-formik-material-ui-booking-form-template  --template typescript --use-npm
