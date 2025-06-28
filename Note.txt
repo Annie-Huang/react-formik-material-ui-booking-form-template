@@ -8,3 +8,4 @@ https://github.com/Annie-Huang/react-formik-material-ui-booking-form-template
 PS C:\react> npx create-react-app react-formik-material-ui-booking-form-template  --template typescript --use-npm
 PS C:\react\react-formik-material-ui-booking-form-template> npm install @mui/material @emotion/react @emotion/styled
 PS C:\react\react-formik-material-ui-booking-form-template> npm install @mui/material @mui/styled-engine-sc styled-components
+PS C:\react\react-formik-material-ui-booking-form-template> npm install formik yup
