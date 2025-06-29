@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { TextField as MuiTextField, TextFieldVariants } from '@mui/material';
+import { TextField as MuiTextField } from '@mui/material';
 import { useField } from 'formik';
 import { TextFieldProps } from '@mui/material/TextField/TextField';
 
-export const Textfield: FC<TextFieldProps> = ({ name, ...otherProps }) => {
+export const TextField: FC<TextFieldProps> = ({ name, ...otherProps }) => {
   const [field, mata] = useField(name);
 
   const configTextfield: TextFieldProps = {
