@@ -3,6 +3,7 @@ import { Container, Grid } from '@mui/material';
 import Header from './components/Header/Header';
 import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
 
+const INITIAL_FORM_STATE = {};
 function App() {
   return (
     <Grid container>
@@ -13,7 +14,9 @@ function App() {
         <Container maxWidth='md'>
           <div style={{ marginBlock: '40px 64px' }}>
             <Formik
-              initialValues={{}}
+              initialValues={{
+                ...INITIAL_FORM_STATE,
+              }}
               onSubmit={function (
                 values: FormikValues,
                 formikHelpers: FormikHelpers<FormikValues>,
