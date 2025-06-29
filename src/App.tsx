@@ -22,11 +22,11 @@ function App() {
                 ...INITIAL_FORM_STATE,
               }}
               validationSchema={FORM_VALIDATION}
-              onSubmit={function (
+              onSubmit={(
                 values: FormikValues,
                 formikHelpers: FormikHelpers<FormikValues>,
-              ): void | Promise<any> {
-                throw new Error('Function not implemented.');
+              ) => {
+                console.log(values);
               }}
             >
               <Form></Form>
