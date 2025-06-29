@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import Header from './components/Header/Header';
 import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import * as Yup from 'yup';
@@ -29,7 +29,21 @@ function App() {
                 console.log(values);
               }}
             >
-              <Form></Form>
+              <Form>
+                <Grid container spacing={2}>
+                  <Grid size={{ xs: 12 }}>
+                    <Typography>Your details</Typography>
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <Typography>Address</Typography>
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <Typography>Booking information</Typography>
+                  </Grid>
+                </Grid>
+              </Form>
             </Formik>
           </div>
         </Container>
