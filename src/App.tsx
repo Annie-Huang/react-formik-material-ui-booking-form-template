@@ -2,8 +2,12 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 import Header from './components/Header/Header';
 import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
+import * as Yup from 'yup';
 
 const INITIAL_FORM_STATE = {};
+
+const FORM_VALIDATION = Yup.object().shape({});
+
 function App() {
   return (
     <Grid container>
@@ -17,6 +21,7 @@ function App() {
               initialValues={{
                 ...INITIAL_FORM_STATE,
               }}
+              validationSchema={FORM_VALIDATION}
               onSubmit={function (
                 values: FormikValues,
                 formikHelpers: FormikHelpers<FormikValues>,
