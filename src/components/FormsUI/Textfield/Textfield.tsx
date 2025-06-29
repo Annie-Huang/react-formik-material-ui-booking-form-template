@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { TextField as MuiTextField, TextFieldVariants } from '@mui/material';
+import { useField } from 'formik';
+import { TextFieldProps } from '@mui/material/TextField/TextField';
 
-type ConfigTextfield = {
-  fullWidth: boolean;
-  variant: TextFieldVariants;
-};
+export const Textfield: FC<TextFieldProps> = ({ name, ...otherProps }) => {
+  const [field, mata] = useField(name);
 
-export const Textfield = () => {
-  const configTextfield: ConfigTextfield = {
+  const configTextfield: TextFieldProps = {
+    ...field,
+    ...otherProps,
     fullWidth: true,
     variant: 'outlined',
   };
