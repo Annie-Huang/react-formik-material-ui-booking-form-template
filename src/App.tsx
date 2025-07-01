@@ -10,6 +10,11 @@ type Values = {
   lastName: string;
   email: string;
   phone: string;
+  addressLine1: string;
+  addressLine2: string;
+  city: string;
+  state: string;
+  country: string;
 };
 
 const INITIAL_FORM_STATE = {
@@ -17,17 +22,29 @@ const INITIAL_FORM_STATE = {
   lastName: '',
   email: '',
   phone: '',
+  addressLine1: '',
+  addressLine2: '',
+  city: '',
+  state: '',
+  country: '',
 };
 
 const FORM_VALIDATION = Yup.object().shape({
   firstName: Yup.string().required('Required'),
   lastName: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email.').required('Required'),
+
   // Actually surprised that I typed it with integer but still able to set it up as string for the type....
   phone: Yup.number()
     .integer()
     .typeError('Please enter a valid phone number')
     .required('Required'),
+
+  addressLine1: Yup.string().required('Required'),
+  addressLine2: Yup.string(),
+  city: Yup.string().required('Required'),
+  state: Yup.string().required('Required'),
+  country: Yup.string().required('Required'),
 });
 
 function App() {
