@@ -5,6 +5,13 @@ import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from './components/FormsUI/TextField/TextField';
 
+type Values = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+};
+
 const INITIAL_FORM_STATE = {
   firstName: '',
   lastName: '',
@@ -37,8 +44,8 @@ function App() {
               }}
               validationSchema={FORM_VALIDATION}
               onSubmit={(
-                values: FormikValues,
-                formikHelpers: FormikHelpers<FormikValues>,
+                values: Values,
+                formikHelpers: FormikHelpers<Values>,
               ) => {
                 console.log(values);
               }}
