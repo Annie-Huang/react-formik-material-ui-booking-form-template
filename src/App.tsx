@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import Header from './components/Header/Header';
 import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import * as Yup from 'yup';
+import { TextField } from './components/FormsUI/TextField/TextField';
 
 const INITIAL_FORM_STATE = {
   firstName: '',
@@ -46,6 +47,13 @@ function App() {
                 <Grid container spacing={2}>
                   <Grid size={{ xs: 12 }}>
                     <Typography>Your details</Typography>
+                  </Grid>
+                  <Grid size={{ xs: 6 }}>
+                    <TextField name='firstName' label='First Name' />
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <TextField name='lastName' label='Last Name' />
                   </Grid>
 
                   <Grid size={{ xs: 12 }}>
