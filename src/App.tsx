@@ -23,6 +23,7 @@ const FORM_VALIDATION = Yup.object().shape({
   firstName: Yup.string().required('Required'),
   lastName: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email.').required('Required'),
+  // Actually surprised that I typed it with integer but still able to set it up as string for the type....
   phone: Yup.number()
     .integer()
     .typeError('Please enter a valid phone number')
@@ -61,6 +62,14 @@ function App() {
 
                   <Grid size={{ xs: 6 }}>
                     <TextField name='lastName' label='Last Name' />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <TextField name='email' label='Email' />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <TextField name='phone' label='Phone' />
                   </Grid>
 
                   <Grid size={{ xs: 12 }}>
