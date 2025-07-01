@@ -94,6 +94,22 @@ function App() {
                   </Grid>
 
                   <Grid size={{ xs: 12 }}>
+                    <TextField name='addressLine1' label='Address Line 1' />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <TextField name='addressLine2' label='Address Line 2' />
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <TextField name='city' label='City' />
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <TextField name='state' label='State' />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
                     <Typography>Booking information</Typography>
                   </Grid>
                 </Grid>
