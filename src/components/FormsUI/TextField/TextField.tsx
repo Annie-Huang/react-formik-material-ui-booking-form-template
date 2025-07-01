@@ -13,5 +13,10 @@ export const TextField: FC<TextFieldProps> = ({ name, ...otherProps }) => {
     variant: 'outlined',
   };
 
+  if (mata && mata.touched && mata.error) {
+    configTextfield.error = true;
+    configTextfield.helperText = mata.error;
+  }
+
   return <MuiTextField {...configTextfield} />;
 };
