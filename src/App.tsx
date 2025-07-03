@@ -17,6 +17,8 @@ type Values = {
   city: string;
   state: string;
   country: string;
+  arrivalDate: string;
+  departureDate: string;
 };
 
 const INITIAL_FORM_STATE = {
@@ -29,6 +31,8 @@ const INITIAL_FORM_STATE = {
   city: '',
   state: '',
   country: '',
+  arrivalDate: '',
+  departureDate: '',
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -47,6 +51,9 @@ const FORM_VALIDATION = Yup.object().shape({
   city: Yup.string().required('Required'),
   state: Yup.string().required('Required'),
   country: Yup.string().required('Required'),
+
+  arrivalDate: Yup.date().required('Required'),
+  departureDate: Yup.date().required('Required'),
 });
 
 function App() {
