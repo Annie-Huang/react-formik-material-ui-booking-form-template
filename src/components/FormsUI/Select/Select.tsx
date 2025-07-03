@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC } from 'react';
-import { TextField as MuiTextField } from '@mui/material';
+import { MenuItem, TextField as MuiTextField } from '@mui/material';
 import { TextFieldProps } from '@mui/material/TextField/TextField';
 import { InputProps as StandardInputProps } from '@mui/material/Input/Input';
 import { useField, useFormikContext } from 'formik';
@@ -30,5 +30,15 @@ export const Select: FC<SelectProps> = ({ name, options, ...otherProps }) => {
     onChange: handleChange,
   };
 
-  return <MuiTextField {...configSelect}></MuiTextField>;
+  return (
+    <MuiTextField {...configSelect}>
+      {Object.keys(options).map((item, pos) => {
+        return (
+          <MenuItem key={pos} value={item}>
+            {options[item]}
+          </MenuItem>
+        );
+      })}
+    </MuiTextField>
+  );
 };
