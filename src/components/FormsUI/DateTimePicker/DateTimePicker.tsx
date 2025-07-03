@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { TextField as MuiTextField } from '@mui/material';
 import { TextFieldProps } from '@mui/material/TextField/TextField';
 
-export const DateTimePicker = () => {
+export const DateTimePicker: FC<TextFieldProps> = ({ name, ...otherProps }) => {
   const configDateTimePicker: TextFieldProps = {
     // ...field,
     // ...otherProps,
