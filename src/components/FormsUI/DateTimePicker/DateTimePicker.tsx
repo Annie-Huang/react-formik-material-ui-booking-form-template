@@ -17,5 +17,10 @@ export const DateTimePicker: FC<TextFieldProps> = ({ name, ...otherProps }) => {
     },
   };
 
+  if (meta && meta.touched && meta.error) {
+    configDateTimePicker.error = true;
+    configDateTimePicker.helperText = meta.error;
+  }
+
   return <MuiTextField {...configDateTimePicker} />;
 };
