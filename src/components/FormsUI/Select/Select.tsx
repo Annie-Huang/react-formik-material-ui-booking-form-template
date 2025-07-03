@@ -23,7 +23,7 @@ export const Select: FC<SelectProps> = ({ name, options, ...otherProps }) => {
 
   const configSelect: TextFieldProps = {
     ...field,
-    // ...otherProps,
+    ...otherProps,
     select: true,
     variant: 'outlined',
     fullWidth: true,
