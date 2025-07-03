@@ -30,6 +30,11 @@ export const Select: FC<SelectProps> = ({ name, options, ...otherProps }) => {
     onChange: handleChange,
   };
 
+  if (meta && meta.touched && meta.error) {
+    configSelect.error = true;
+    configSelect.helperText = meta.error;
+  }
+
   return (
     <MuiTextField {...configSelect}>
       {Object.keys(options).map((item, pos) => {
