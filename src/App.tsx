@@ -4,6 +4,8 @@ import Header from './components/Header/Header';
 import { Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from './components/FormsUI/TextField/TextField';
+import { Select } from './components/FormsUI/Select/Select';
+import countries from './data/countries.json';
 
 type Values = {
   firstName: string;
@@ -107,6 +109,14 @@ function App() {
 
                   <Grid size={{ xs: 6 }}>
                     <TextField name='state' label='State' />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <Select
+                      name='country'
+                      label='Country'
+                      options={countries}
+                    />
                   </Grid>
 
                   <Grid size={{ xs: 12 }}>
