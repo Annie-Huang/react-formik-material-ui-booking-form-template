@@ -2,6 +2,7 @@ import React, { ChangeEvent, FC } from 'react';
 import { TextField as MuiTextField } from '@mui/material';
 import { TextFieldProps } from '@mui/material/TextField/TextField';
 import { InputProps as StandardInputProps } from '@mui/material/Input/Input';
+import { useField } from 'formik';
 
 type Options = {
   [field: string]: string;
@@ -9,11 +10,14 @@ type Options = {
 type SelectProps = TextFieldProps & { options: Options };
 
 export const Select: FC<SelectProps> = ({ name, options, ...otherProps }) => {
+  const [field, meta] = useField(name);
+  console.log('field=', field);
+
   // const handleChange = (evt: StandardInputProps['onChange']) => {};
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {};
 
   const configSelect: TextFieldProps = {
-    // ...field,
+    ...field,
     // ...otherProps,
     select: true,
     variant: 'outlined',
