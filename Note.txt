@@ -13,4 +13,5 @@ PS C:\react\react-formik-material-ui-booking-form-template> npm install @mui/mat
 PS C:\react\react-formik-material-ui-booking-form-template> npm install @mui/material @mui/styled-engine-sc styled-components
 PS C:\react\react-formik-material-ui-booking-form-template> npm install formik yup
 PS C:\react\react-formik-material-ui-booking-form-template> npm install @mui/x-date-pickers
+PS C:\react\react-formik-material-ui-booking-form-template> npm install dayjs
 
