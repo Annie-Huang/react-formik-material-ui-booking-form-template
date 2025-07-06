@@ -32,9 +32,12 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <FormControl>
-      <FormLabel></FormLabel>
+      <FormLabel component='legend'>{legend}</FormLabel>
       <FormGroup>
-        <FormControlLabel control={<MuiCheckbox />} label='' />
+        <FormControlLabel
+          control={<MuiCheckbox {...configCheckbox} />}
+          label={label}
+        />
       </FormGroup>
     </FormControl>
   );
