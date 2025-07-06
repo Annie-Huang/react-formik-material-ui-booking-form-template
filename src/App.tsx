@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { TextField } from './components/FormsUI/TextField/TextField';
 import { Select } from './components/FormsUI/Select/Select';
 import countries from './data/countries.json';
+import { DateTimePicker } from './components/FormsUI/DateTimePicker/DateTimePicker';
 
 type Values = {
   firstName: string;
@@ -128,6 +129,17 @@ function App() {
 
                   <Grid size={{ xs: 12 }}>
                     <Typography>Booking information</Typography>
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <DateTimePicker name='arrivalDate' label='Arrival Date' />
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <DateTimePicker
+                      name='departureDate'
+                      label='Departure Date'
+                    />
                   </Grid>
                 </Grid>
               </Form>
