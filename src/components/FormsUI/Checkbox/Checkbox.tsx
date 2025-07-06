@@ -4,12 +4,18 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormHelperText,
   FormLabel,
 } from '@mui/material';
 import { CheckboxProps as MuiCheckboxProps } from '@mui/material/Checkbox/Checkbox';
 import { useField, useFormikContext } from 'formik';
 
 type CheckboxProps = MuiCheckboxProps & { label: string; legend: string };
+
+type ConfigFormControl = {
+  error?: boolean;
+  helperText?: string;
+};
 
 export const Checkbox: FC<CheckboxProps> = ({
   name,
@@ -30,10 +36,10 @@ export const Checkbox: FC<CheckboxProps> = ({
     onChange: handleChange,
   };
 
-  const configFormControl = {};
+  const configFormControl: ConfigFormControl = {};
   if (meta && meta.touched && meta.error) {
-    // @ts-ignore
     configFormControl.error = true;
+    configFormControl.helperText = meta.error;
   }
 
   return (
@@ -45,6 +51,9 @@ export const Checkbox: FC<CheckboxProps> = ({
           label={label}
         />
       </FormGroup>
+      {configFormControl.helperText && (
+        <FormHelperText>{configFormControl.helperText}</FormHelperText>
+      )}
     </FormControl>
   );
 };

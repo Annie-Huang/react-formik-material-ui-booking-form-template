@@ -13,7 +13,7 @@ export const Select: FC<SelectProps> = ({ name, options, ...otherProps }) => {
   const { setFieldValue } = useFormikContext();
 
   const [field, meta] = useField(name);
-  console.log('field=', field);
+  // console.log('field=', field);
 
   // const handleChange = (evt: StandardInputProps['onChange']) => {};
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
