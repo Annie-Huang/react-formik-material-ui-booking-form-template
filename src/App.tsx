@@ -7,6 +7,9 @@ import { TextField } from './components/FormsUI/TextField/TextField';
 import { Select } from './components/FormsUI/Select/Select';
 import countries from './data/countries.json';
 import { DateTimePicker } from './components/FormsUI/DateTimePicker/DateTimePicker';
+import DatePicker from './components/FormsUI/DateTimePicker/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 type Values = {
   firstName: string;
@@ -59,6 +62,7 @@ const FORM_VALIDATION = Yup.object().shape({
 
 function App() {
   return (
+    // <LocalizationProvider dateAdapter={AdapterDayjs}>
     <Grid container>
       <Grid size={{ xs: 12 }}>
         <Header />
@@ -141,6 +145,14 @@ function App() {
                       label='Departure Date'
                     />
                   </Grid>
+
+                  {/*<Grid size={{ xs: 6 }}>*/}
+                  {/*  <DatePicker name='arrivalDate' label='Arrival Date' />*/}
+                  {/*</Grid>*/}
+
+                  {/*<Grid size={{ xs: 6 }}>*/}
+                  {/*  <DatePicker name='departureDate' label='Departure Date' />*/}
+                  {/*</Grid>*/}
                 </Grid>
               </Form>
             </Formik>
@@ -148,6 +160,7 @@ function App() {
         </Container>
       </Grid>
     </Grid>
+    // </LocalizationProvider>
   );
 }
 
