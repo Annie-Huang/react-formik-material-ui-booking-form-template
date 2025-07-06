@@ -23,6 +23,7 @@ type Values = {
   country: string;
   arrivalDate: string;
   departureDate: string;
+  message: string;
 };
 
 const INITIAL_FORM_STATE = {
@@ -37,6 +38,7 @@ const INITIAL_FORM_STATE = {
   country: '',
   arrivalDate: '',
   departureDate: '',
+  message: '',
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -58,6 +60,7 @@ const FORM_VALIDATION = Yup.object().shape({
 
   arrivalDate: Yup.date().required('Required'),
   departureDate: Yup.date().required('Required'),
+  message: Yup.string(),
 });
 
 function App() {
@@ -153,6 +156,15 @@ function App() {
                   {/*<Grid size={{ xs: 6 }}>*/}
                   {/*  <DatePicker name='departureDate' label='Departure Date' />*/}
                   {/*</Grid>*/}
+
+                  <Grid size={{ xs: 12 }}>
+                    <TextField
+                      name='message'
+                      label='Message'
+                      multiline={true}
+                      rows={4}
+                    />
+                  </Grid>
                 </Grid>
               </Form>
             </Formik>
