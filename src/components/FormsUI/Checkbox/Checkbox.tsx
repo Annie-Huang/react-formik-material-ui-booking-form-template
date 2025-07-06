@@ -21,8 +21,8 @@ export const Checkbox: FC<CheckboxProps> = ({
   const [field, meta] = useField(name);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    setFieldValue(name ?? '', value);
+    const { checked } = event.target;
+    setFieldValue(name ?? '', checked);
   };
 
   const configCheckbox = {
