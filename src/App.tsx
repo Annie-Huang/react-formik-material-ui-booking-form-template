@@ -11,6 +11,7 @@ import DatePicker from './components/FormsUI/DateTimePicker/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Checkbox } from './components/FormsUI/Checkbox/Checkbox';
+import { SubmitButton } from './components/FormsUI/SubmitButton/SubmitButton';
 
 type Values = {
   firstName: string;
@@ -178,6 +179,10 @@ function App() {
                       legend='Terms Of Service'
                       label='I agree'
                     />
+                  </Grid>
+
+                  <Grid size={{ xs: 12 }}>
+                    <SubmitButton>Submit Form</SubmitButton>
                   </Grid>
                 </Grid>
               </Form>
