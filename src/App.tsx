@@ -24,6 +24,7 @@ type Values = {
   arrivalDate: string;
   departureDate: string;
   message: string;
+  termsOfService: boolean;
 };
 
 const INITIAL_FORM_STATE = {
@@ -39,6 +40,7 @@ const INITIAL_FORM_STATE = {
   arrivalDate: '',
   departureDate: '',
   message: '',
+  termsOfService: false,
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -61,6 +63,9 @@ const FORM_VALIDATION = Yup.object().shape({
   arrivalDate: Yup.date().required('Required'),
   departureDate: Yup.date().required('Required'),
   message: Yup.string(),
+  termsOfService: Yup.boolean()
+    .oneOf([true], 'The terms and conditions must be accepted.')
+    .required('The terms and conditions must be accepted.'),
 });
 
 function App() {
