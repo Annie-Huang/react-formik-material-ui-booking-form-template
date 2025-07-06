@@ -30,8 +30,14 @@ export const Checkbox: FC<CheckboxProps> = ({
     onChange: handleChange,
   };
 
+  const configFormControl = {};
+  if (meta && meta.touched && meta.error) {
+    // @ts-ignore
+    configFormControl.error = true;
+  }
+
   return (
-    <FormControl>
+    <FormControl {...configFormControl}>
       <FormLabel component='legend'>{legend}</FormLabel>
       <FormGroup>
         <FormControlLabel
