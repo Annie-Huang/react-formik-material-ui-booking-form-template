@@ -7,7 +7,7 @@ import {
   FormLabel,
 } from '@mui/material';
 import { CheckboxProps as MuiCheckboxProps } from '@mui/material/Checkbox/Checkbox';
-import { useField } from 'formik';
+import { useField, useFormikContext } from 'formik';
 
 type CheckboxProps = MuiCheckboxProps & { label: string; legend: string };
 
@@ -17,9 +17,13 @@ export const Checkbox: FC<CheckboxProps> = ({
   legend,
   ...otherProps
 }) => {
+  const { setFieldValue } = useFormikContext();
   const [field, meta] = useField(name);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setFieldValue(name ?? '', value);
+  };
 
   const configCheckbox = {
     ...field,
